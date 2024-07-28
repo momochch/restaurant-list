@@ -16,7 +16,17 @@ app.get('/', (req, res) =>{
 
 //main.hbs裡面的{{{body}}}載入的是index.hbs
 app.get('/restaurants', (req, res)=>{
-  res.render('index', { restaurants })
+  //".keyword"和index.hbs裡的input的name一樣
+  const keyword = req.query.keyword?.trim()
+  const matchedRes = keyword ? restaurants.filter((res) =>
+    Object.values(res).some((property) => {
+      if (typeof property === 'string'){
+        return property.toLowerCase().includes(keyword.toLowerCase())
+      }
+      return false
+    })
+  ) : restaurants
+  res.render('index', { restaurants: matchedRes, keyword })
 })
 
 app.get('/restaurant/:id', (req, res)=>{

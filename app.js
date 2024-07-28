@@ -21,9 +21,10 @@ app.get('/restaurants', (req, res)=>{
 
 app.get('/restaurant/:id', (req, res)=>{
   const id = req.params.id
-  res.send(`read restaurant: ${id}`)
+  const restaurant = restaurants.find((res) => res.id.toString() === id)
+  res.render('show-page', { restaurant })
 })
 
-app.listen(port, ()=>{
+app.listen(port, () => {
   console.log(`express server is running on http://localhost:${port}`)
 })

@@ -64,5 +64,5 @@ express server is running on http://localhost:3000
 請打開瀏覽器進入網址輸入[http://localhost:3000](http://localhost:3000) 開始使用餐廳清單
 
 ## Contributor - 開發人員
-[momochch](https://github.com/momochch) - 根據project template以Express伺服器建立此專案
-[Alpha camp](https://tw.alphacamp.co/) - 提供project template
+- [momochch](https://github.com/momochch) - 根據project template以Express伺服器建立此專案
+- [Alpha camp](https://tw.alphacamp.co/) - 提供project template
